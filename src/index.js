@@ -1,1 +1,2 @@
-console.log('Hello!');
+import './scss/main.scss';
+console.log(`The time is ${new Date()}`);
