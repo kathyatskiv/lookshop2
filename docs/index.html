@@ -6,13 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="./js/main.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <div class="wrapper">
-        <header class="header" id = "header"></header>
-        <main class="main"></main>
-            Hello!
+        <header class="header content" id = "header">
+            <img src = "img/logo.png" alt="company logo" class="header__img">
+            <div class="cart">
+                <button id="cartBtn" class="cart__btn">
+                    <i class="material-icons cart__icon">local_grocery_store</i>
+                    <span class="cart__amount">0</span>
+                    <span class="cart__price">0 <span class="currency">$</span></span>
+                </button>
+    
+                <div id="cartModal" class="cart__modal" style="display: none;">
+    
+                    <div class="modal__content">
+                        <div class="modal__header">
+                        <span class="modal__close">&times;</span>
+                        <h2>Your cart</h2>
+                        </div>
+                        <div class="modal__wrapper">
+                            <div class="modal__body">
+                                Cart is empty.
+                            </div>
+                            <div class="modal__footer">
+                                <h3>Total: 0<span class = "currency">$</span></h3>
+                            </div>
+    
+                        </div>
+                    </div>      
+                </div>
+
+            </div>
+            <button class = "menu-btn">
+                <i class="material-icons menu-btn__icon">
+                        menu
+                </i>
+            </button>
+        </header>
+        <main class="main content">
+                <div class="products"></div>
+                <button class="show-more">Show more..</button>
+        </main>
         <footer class="footer" id="footer"></footer>
     </div>
 </body>
