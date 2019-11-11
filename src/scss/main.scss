@@ -67,6 +67,12 @@ a{
 
 button{
     cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:active{
+        border: none;
+    }
 }
 
 /*=============================
@@ -278,11 +284,13 @@ button{
     background: #c2c2c2;
 }
 
-.nav-menu__sub-item:hover > .nav-menu__link{
+.nav-menu__sub-item:hover > .nav-menu__btn{
     color: #fff;
 }
 
-.nav-menu__link{
+.nav-menu__btn{
+    width: 100%;
+    
     text-decoration: none;
     color: #000;
 }
@@ -817,6 +825,9 @@ button{
     font-size: 5vw;
     background: #F9F5F4;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .product__link{

@@ -1,31 +1,32 @@
 import './scss/main.scss';
 import './scss/media.scss';
 
+
 document.addEventListener("DOMContentLoaded", function(event) {
-    init();
-  });
+  init();
+});
 
 function init(){
-    menuBtn = menuBtn[0];
-    menuList = menuList[0];
-    
     setWidth();
     window.addEventListener("resize", ev => setWidth());
+    setAllProducts();
+    setCategories();
     initCart();
     initModal();
 }
 
 // menu-btn
 
-var menuBtn = document.getElementsByClassName('menu-btn');
-var menuList = document.getElementsByClassName('menu');
 
  function setWidth(){
+  const menuBtn = document.getElementById('menu-btn');
+  const menuList = document.getElementById('menu-list');
+
     if(screen.width <= 1100){
         addClass(menuBtn, 'active');
         removeClass(menuList, 'active');
 
-        menuBtn.addEventListener('click', () => menuBtnClick(menuBtn));
+        document.addEventListener('click', () => menuBtnClick(menuBtn, menuList));
     }
     else{
         if(menuBtn.classList.contains('active')) removeClass(menuBtn, 'active');
@@ -33,7 +34,7 @@ var menuList = document.getElementsByClassName('menu');
     }
   }
 
-  function menuBtnClick(){
+  function menuBtnClick(menuBtn, menuList){
     if(menuBtn.classList.contains('active')){
         removeClass(menuBtn,'active');
         addClass(menuList, 'active');
@@ -60,7 +61,6 @@ var menuList = document.getElementsByClassName('menu');
   function initCart(){
     
     var products = document.getElementsByClassName('product');
-    var productBtns =[];
 
     for(let product in products){
       var productBtn = document.getElementsByClassName('product__btn')[product];
@@ -114,11 +114,11 @@ function refreshCart(cart){
     sum += element.price * element.amount;
   });
 
-  const cartAmount = cart.getElementsByClassName('cart__amount')[0];
+  const cartAmount = document.getElementsByClassName('cart__amount')[0];
   cartAmount.textContent = amount;
 
-  const cartSum = cart.getElementsByClassName("cart__price")[0];
-  const currency = cart.getElementsByClassName("currency")[0].textContent;
+  const cartSum = document.getElementsByClassName("cart__price")[0];
+  const currency = document.getElementsByClassName("currency")[0].textContent;
   cartSum.innerHTML = `${sum.toFixed(2)} <span class="currency">${currency}</span>`
 
   refreshModal(sum);
@@ -232,10 +232,10 @@ function createProductHTML(name, price, amount, currency,img){
 }
 
 function setModalCloseBtns(){
-  var cartItems = document.getElementsByClassName('cartItem');
+  let cartItems = document.getElementsByClassName('cartItem');
 
   for(let cartItem in cartItems){
-    var btn = document.getElementsByClassName("cartItem__close")[cartItem];
+    let btn = document.getElementsByClassName("cartItem__close")[cartItem];
 
     if(cartItem < cartItems.length){
       btn.addEventListener('click', ev => {
@@ -261,15 +261,96 @@ function setModalAmountBtns(){
 
         if(cartArray[cartItem].amount == 1) cartArray.splice(cartItem, 1);
         else cartArray[cartItem].amount--;
-        refreshCart(cart[0]);
+        refreshCart(cart);
       });
 
       btnPlus.addEventListener('click', ev =>{
         ev.preventDefault();
         cartArray[cartItem].amount++;
-        refreshCart(cart[0]);
+        refreshCart(cart);
       });
     }
 
   }
 }
+
+
+
+//xhr requests
+const xhr = new XMLHttpRequest();
+
+function get(api){
+  xhr.open('GET', api, false);
+  xhr.send();
+
+  if (xhr.status != 200) {
+    alert( xhr.status + ': ' + xhr.statusText );
+  } else {
+    let arr = JSON.parse(xhr.responseText);
+    return arr;
+  }
+}
+
+
+//page
+function setProducts(products){
+  let productsContainer = document.getElementsByClassName("products")[0];
+  productsContainer.innerHTML = "";
+  for(let product in products){
+    productsContainer.innerHTML += createMainProduct(products[product]["id"], products[product]["image_url"], products[product]["name"], products[product]["price"], products[product]["special_price"]);
+  }
+  
+}
+
+function setAllProducts(){
+  const all = get('https://nit.tron.net.ua/api/product/list');
+  setProducts(all);
+}
+
+function createMainProduct(id, img, name, price, specialPrice){
+  return `<div class="product" id=${id}>
+  <a href="#" class="product__link">
+      <div class="product__img--wrapper">
+          <img src=${img} alt="" class="product__img">
+      </div>
+      
+      <h3 class="product__title">
+          ${name}
+      </h3>
+      <span class="product__price" data-descr=${specialPrice != null ? price : ""}>
+          <span class="currency">$</span>
+          ${specialPrice != null ? specialPrice : price}
+      </span>
+      <button class="product__btn" type="button">
+          add to cart
+          <i class="material-icons product__btn-icon">add</i>
+      </button>
+  </a>
+</div>`
+}
+
+function setCategories(){
+  const categories = get('https://nit.tron.net.ua/api/category/list');
+  
+  const categoryList = document.getElementById('category-list');
+  categoryList.innerHTML = "";
+
+  for(let category in categories){
+    categoryList.innerHTML += `<li class="nav-menu__sub-item"><button class="nav-menu__btn"  data-id=${categories[category]["id"]}>${categories[category]["name"]}</button></li>`
+  }
+  categoryList.innerHTML += `<li class="nav-menu__sub-item"><button class="nav-menu__btn" data-id="all">All</button></li>`
+
+  const categoriesHTML = document.getElementsByClassName("nav-menu__btn");
+
+  for(let i = 0; i < categoriesHTML.length; i++)
+    categoriesHTML[i].addEventListener('click', () => setProductsByCategoy(categoriesHTML[i].getAttribute("data-id")));
+
+}
+
+function setProductsByCategoy(id){
+  
+  const products = id != "all" ? get(`https://nit.tron.net.ua/api/product/list/category/${id}`) : get('https://nit.tron.net.ua/api/product/list');
+  setProducts(products)
+}
+
+

@@ -7,6 +7,7 @@
     <title>Lookshop</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="#" />
     <script src="js/main.js"></script>
 </head>
 <body>
@@ -36,18 +37,15 @@
         </div>
         <div class="main-header content-padding">
             <img src="img/logo.png" alt="logo" class="logo-img">
-            <nav class="menu">
+            <nav class="menu" id = "menu-list">
                 <ul class="nav-menu__list">
                     <li class="nav-menu__item">
-                        <span class="nav-menu__item-text">
-                            new
+                        <span class="nav-menu__item-text" >
+                            category
                             <i class="material-icons nav-menu__icon">arrow_drop_down</i>
                         </span>
-                        <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link1</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link2</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link3</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link4</a></li>
+                        <ul class="nav-menu__sub-list" id = "category-list">
+                            
                         </ul>
                     </li>
                     <li class="nav-menu__item">
@@ -55,45 +53,28 @@
                             designers
                             <i class="material-icons nav-menu__icon">arrow_drop_down</i>
                         </span>
-                        <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link1</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link2</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link3</a></li>
-                        </ul>
                     </li>
                     <li class="nav-menu__item">
                         <span class="nav-menu__item-text">
                             women
                             <i class="material-icons nav-menu__icon">arrow_drop_down</i>
                         </span>
-                        <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link1</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link2</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link3</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link4</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link5</a></li>
-                        </ul>
                     </li>
                     <li class="nav-menu__item">
                         <span class="nav-menu__item-text">
                             men
                             <i class="material-icons nav-menu__icon">arrow_drop_down</i>
                         </span>
-                        <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link1</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link2</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link3</a></li>
-                        </ul>
                     </li>
                     <li class="nav-menu__item">
                         <span class="nav-menu__item-text">
                             clearence
                             <i class="material-icons nav-menu__icon">arrow_drop_down</i>
                         </span>
-                        <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link1</a></li>
-                            <li class="nav-menu__sub-item"><a href="" class="nav-menu__link">Link2</a></li>
-                        </ul>
+                        <!-- <ul class="nav-menu__sub-list">
+                            <li class="nav-menu__sub-item"><button href="" class="nav-menu__btn">Link1</button></li>
+                            <li class="nav-menu__sub-item"><button href="" class="nav-menu__btn">Link2</button></li>
+                        </ul> -->
                     </li>
                 </ul>
             </nav>
@@ -124,7 +105,7 @@
                   
                   </div>
             </div>
-            <button class = "menu-btn">
+            <button class = "menu-btn" id = "menu-btn">
                     <i class="material-icons menu-btn__icon">
                         menu
                         </i>
@@ -306,311 +287,7 @@
                 </div>
 
                 <div class="products">
-                    <div class="product" id="p00001">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Good shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="product" id="p00002">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Cool shorts
-                            </h3>
-                            <span class="product__price" data-descr="79.95">
-                                <span class="currency">$</span>
-                                69.95
-                            </span>
-                            <button class="product__btn"  type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00003">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Pretty shorts
-                            </h3>
-                            <span class="product__price" data-descr="79.95">
-                                <span class="currency">$</span>
-                                69.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00004">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Fashoin shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00005">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Luxury shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00006">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Beautyful shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00007">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Wonderful shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn" type="button" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00008">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Exceptional shorts
-                            </h3>
-                            <span class="product__price" data-descr="79.95">
-                                <span class="currency">$</span>
-                                69.95
-                            </span>
-                            <button class="product__btn" type="button">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00009">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Popular shorts
-                            </h3>
-                            <span class="product__price" data-descr="79.95">
-                                <span class="currency">$</span>
-                                69.95
-                            </span>
-                            <button class="product__btn">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00010">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Amazing shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00011">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Special shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="product" id="p00012">
-                        <a href="" class="product__link">
-                            <div class="product__img--wrapper">
-                                <img src="img/mainproductpic.png" alt="" class="product__img">
-                            </div>
-                            
-                            <h3 class="product__title">
-                                Particular shorts
-                            </h3>
-                            <span class="product__price" data-descr="">
-                                <span class="currency">$</span>
-                                79.95
-                            </span>
-                            <button class="product__btn">
-                                add to cart
-                                <i class="material-icons product__btn-icon">add</i>
-                            </button>
-                            <span class="print-text">
-                                You can buy it on
-                                <br>
-                                <span class="underline">
-                                    lookshoop.com
-                                </span>
-                            </span>
-                        </a>
-                    </div>
+                    
                 </div>
                 <div class="page-info--bottom">
                     <div class="pages">
