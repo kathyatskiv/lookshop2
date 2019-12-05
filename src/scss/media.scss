@@ -269,6 +269,9 @@
 }
 
 @media screen and (max-width: 650px){
+    .product-modal__content{
+        height: 85%;
+    }
     .cartItem__descr--wrapper{
         justify-content: flex-start;
     }
@@ -344,7 +347,7 @@
 
 
 @media screen and (max-width: 495px){
-    .modal__content{
+    .modal__content, .order__content, .product-modal__content{
         width: 70%;
     }
 
@@ -376,6 +379,9 @@
 }
 
 @media screen and (max-width: 450px){
+     .order__content, .product-modal__content{
+        height: 90%;
+    }
     .content-padding{
         padding: 0 30px 0 30px;
     }
@@ -408,5 +414,11 @@
 
     .footer__contacts{
         height: 150px;
+    }
+}
+@media screen and (max-width: 345px){
+
+    .cartItem__close{
+        display: none;
     }
 }

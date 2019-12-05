@@ -40,42 +40,12 @@
             <nav class="menu" id = "menu-list">
                 <ul class="nav-menu__list">
                     <li class="nav-menu__item">
-                        <span class="nav-menu__item-text" >
-                            category
-                            <i class="material-icons nav-menu__icon">arrow_drop_down</i>
-                        </span>
-                        <ul class="nav-menu__sub-list" id = "category-list">
-                            
-                        </ul>
+                        <a href="index.html" class="nav-menu__link">Main Page</a>
                     </li>
                     <li class="nav-menu__item">
-                        <span class="nav-menu__item-text">
-                            designers
-                            <i class="material-icons nav-menu__icon">arrow_drop_down</i>
-                        </span>
+                        <a href="#" class="nav-menu__link">Contacts</a>
                     </li>
-                    <li class="nav-menu__item">
-                        <span class="nav-menu__item-text">
-                            women
-                            <i class="material-icons nav-menu__icon">arrow_drop_down</i>
-                        </span>
-                    </li>
-                    <li class="nav-menu__item">
-                        <span class="nav-menu__item-text">
-                            men
-                            <i class="material-icons nav-menu__icon">arrow_drop_down</i>
-                        </span>
-                    </li>
-                    <li class="nav-menu__item">
-                        <span class="nav-menu__item-text">
-                            clearence
-                            <i class="material-icons nav-menu__icon">arrow_drop_down</i>
-                        </span>
-                        <!-- <ul class="nav-menu__sub-list">
-                            <li class="nav-menu__sub-item"><button href="" class="nav-menu__btn">Link1</button></li>
-                            <li class="nav-menu__sub-item"><button href="" class="nav-menu__btn">Link2</button></li>
-                        </ul> -->
-                    </li>
+
                 </ul>
             </nav>
             <div class="cart">
@@ -86,7 +56,6 @@
                 </button>
 
                 <div id="cartModal" class="cart__modal">
-
                     <div class="modal__content">
                       <div class="modal__header">
                         <span class="modal__close">&times;</span>
@@ -98,12 +67,42 @@
                           </div>
                           <div class="modal__footer">
                             <h3>Total: 0<span class = "currency">$</span></h3>
+                            <button class="modal__btn" id = "modal__btn">Buy</button>
                           </div>
-
                       </div>
                     </div>
-                  
-                  </div>
+                </div>
+
+                <div class="order" id = "order">
+                    <div class="order__content" id="order__content">
+                        <div class="order__header">
+                            <span class="order__close">&times;</span>
+                            <h2>Make an order</h2>
+                        </div>
+                        <form class = "order__form" id = "order__form" name="order" method="POST" action="https://nit.tron.net.ua/api/order/add/">
+                            <ul class="order__list" id ="order__list">
+                                <li class="order__item" id="order__item">
+                                    Name:
+                                    <input type="text" class = "order__name" id="order__name" name="name" required>
+                                </li>
+                                <li class="order__item" id="order__item">
+                                    Phone:
+                                    <input type="tel" class = "order__tel" id = "order__tel" name="phone" required>
+                                </li>
+                                <li class="order__item" id="order__item">
+                                    e-mail:
+                                    <input type="email" class = "order__email" id = "order__email" name="email" required>
+                                </li>
+                                <li class="order__item" id="order__item">
+                                    <input type="submit" class = "order__btn" name="submit" value = "Send">
+                                </li>
+                            </ul>
+                            
+                        </form>
+                    </div>
+                    
+                </div>
+
             </div>
             <button class = "menu-btn" id = "menu-btn">
                     <i class="material-icons menu-btn__icon">
@@ -115,194 +114,35 @@
     <div class="wrapper">
 
         <main class="main content-padding">
-            <h6 class="path">
-                <a href="" class="" id="home" class="path__link">
-                    <i class="material-icons path__icon">home</i>
-                </a>
-                &ThickSpace;>
-                <a href="" class="path__link" id="women">
-                    &ThickSpace;Women  
-                </a>
-                &ThickSpace;>
-                <a href="" class="path__link" id="womwn-clothes">
-                    &ThickSpace;Clothes
-                </a>
-            </h6>
-            <div class="slider">
-                <button class="slider__left">
-                    <i class="material-icons slider__arrow">keyboard_arrow_left</i>
-                </button>
-                <div class="img--container">
-                    <img src="img/sliderimg1.png" alt="" class="slider__img">
-                    <img src="img/sliderimg2.png" alt="" class="slider__img">
-                </div>
-                <div class="slider__info">
-                    <a href="#" class="slider__link">
-                        <h1 class="slider__title">Open heart top</h1>
-                        <span class="slider__price">
-                            <span class="currency">$</span>
-                            13.95
-                        </span>
-                        <p class="slider__descr">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quibusdam ipsa eos quam laboriosam ad corrupti nisi. Perferendis reiciendis, quae nam consectetur voluptatem, asperiores libero harum quaerat atque perspiciatis nobis! Incidunt architecto eaque fugiat rem.    
-                        </p>
-
-                    </a>
-                </div>
-                <button class="slider__right">
-                    <i class="material-icons slider__arrow">keyboard_arrow_right</i>
-                </button>
-            </div>
-            <div class="slider-navigation">
-                <div class="dot" id="slider-dot-1"></div>
-                <div class="dot" id="slider-dot-2"></div>
-                <div class="dot active" id="slider-dot-3"></div>
-                <div class="dot" id="slider-dot-4"></div>
-                <div class="dot" id="slider-dot-5"></div>
-            </div>
+            <span>Select category: </span>
+            <select name="category" id="category">
+            </select>
+            
             <content class="content">
-                    <aside class="side-bar">
-                            <div class="side-bar__block">
-                            <h3 class="block__title">categories</h3>
-                                
-                            </div>
-                            <div class="side-bar__block">
-                                <h3 class="block__title">on sale</h3>
-                                <ul class="block__list">
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="side-bar__block">
-                                <h3 class="block__title">featured products</h3>
-                                <ul class="block__list">
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block__item">
-                                        <a href="" class="block__link">
-                                            <div class="block-item__img--container">
-                                                <img src="img/productpic.png" alt="" class="block-item__img">
-                                            </div>
-                                            <div class="block-item__descr">
-                                                <h5 class="block-item__title">Basic sunglasses</h5>
-                                                <span class="block-item__price">
-                                                    <span class="currency">$</span>
-                                                    14.95
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </aside>
-
-                <div class="page-info">
-                    <div class="sort">
-                        Sort by
-                        <select name="sort-by" id="sort-by" class="sort__select">
-                            <option value="" class="sort__option">New</option>
-                            <option value="" class="sort__option">Popular</option>
-                            <option value="" class="sort__option">Recomended</option>
-                            <option value="" class="sort__option">Hight to low</option>
-                            <option value="" class="sort__option">Low to hight</option>
-                        </select>
-                    </div>
-                    <div class="pages">
-                        <div class="pages-text">
-                            Showing&MediumSpace;<span id="products-amount">1-12</span>&MediumSpace;of&MediumSpace;<span id="results-amount">347</span>&MediumSpace;results
-                        </div>
-                        <div class="pages__btns">
-                            <button class="pages__btn active">1</button>
-                            <button class="pages__btn">2</button>
-                            <button class="pages__btn">3</button>
-                            <button class="pages__btn"><i class="material-icons pages__arrow">keyboard_arrow_right</i></button>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="products">
                     
                 </div>
+
                 <div class="page-info--bottom">
                     <div class="pages">
                         <div class="pages-text">
-                            Showing&MediumSpace;<span id="products-amount">1-12</span>&MediumSpace;of&MediumSpace;<span id="results-amount">347</span>&MediumSpace;results
-                        </div>
-                        <div class="pages__btns">
-                            <button class="pages__btn active">1</button>
-                            <button class="pages__btn">2</button>
-                            <button class="pages__btn">3</button>
-                            <button class="pages__btn"><i class="material-icons pages__arrow">keyboard_arrow_right</i></button>
+                            <span id="products-amount"></span>&MediumSpace;results
                         </div>
                     </div>
                 </div>
-            </content>    
+            </content>
+            
+            <div id="product-modal">
+                <div class="product-modal__content">
+                    <div class="product-modal__header">
+                        <span class="product-modal__close" id="product-modal__close">&times;</span>
+                    </div>
+                    <div class="product-modal__body" id="product-modal__body">
+
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer">
@@ -321,106 +161,9 @@
                     <img src="img/dk.png" alt="dk">
                 </div>
              </div>
-            <div class="footer__menu content-padding">
-                <ul class="footer__menu-list">
-                    <li class="menu__item">
-                        <h6 class="menu__item-header">Custumer Service</h6>
-                        <ul class="menu__item-list">
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Contact</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">FAQ</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Terms of payment</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Terms of sale</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Delivery termas and conditions</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Returns and Refunds</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item">
-                        <h6 class="menu__item-header">Information</h6>
-                        <ul class="menu__item-list">
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Affiliate</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Cookies</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">How to Shop</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">About Nelly</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Investor relations</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item">
-                        <h6 class="menu__item-header">Campaigns</h6>
-                        <ul class="menu__item-list">
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Evening dresses</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Makeup</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Fashion forward</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Training clothes</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Spesial Occasions Dresses</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item">
-                        <h6 class="menu__item-header">Store</h6>
-                        <ul class="menu__item-list">
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Paris</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">New York</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">London</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Madrid</a></li>
-                            <li class="menu__item-elem"><a href="" class="menu__item-link">Tokyo</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item">
-                        <h6 class="menu__item-header">Social</h6>
-                        <ul class="menu__item-list menu__item-list--socials">
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/twitter.png" alt="#">
-                                </a>
-                            </li>
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/facebook.png" alt="#">
-                                </a>
-                            </li>
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/vimeo.png" alt="#">
-                                </a>
-                            </li>
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/tumblr.png" alt="#">
-                                </a>
-                            </li>
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/google+.png" alt="#">
-                                </a>
-                            </li>
-                            <li class="menu__item-elem menu__item-elem--socials">
-                                <a href="" class="menu__item-link">
-                                    <img class="social-img" src="img/pinterest.png" alt="#">
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+
             <div class="footer__contacts content-padding">
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item nav__item--footer">
-                            <a href="" class="nav__link">Privasy & Cookies</a>
-                        </li>
-                        <li class="nav__item nav__item--footer">
-                            <a href="" class="nav__link">Terms & conditions</a>
-                        </li>
-                        <li class="nav__item nav__item--footer">
-                            <a href="" class="nav__link">Accesibility</a>
-                        </li>
-                        <li class="nav__item nav__item--footer">
-                            <a href="" class="nav__link">Stone Directory</a>
-                        </li>
-                        <li class="nav__item nav__item--footer">
-                            <a href="" class="nav__link">About Us</a>
-                        </li>
-                    </ul>
-                </nav>
+                
                 <span class="footer__rights">
                     &copy;Lookshop.com
                     <br>
@@ -429,5 +172,6 @@
             </div>
         </footer>      
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>
