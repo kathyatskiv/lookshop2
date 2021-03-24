@@ -6,5 +6,6 @@
 <ul>
 <li> HTNL </li>
 <li> CSS </li>
+<li> JS </li>
 </ul>
 </p>
